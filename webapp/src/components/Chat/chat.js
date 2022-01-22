@@ -29,12 +29,12 @@ const SlideChat = () => {
     <>
       <TypeButton
         onClick={handleToolbarClick}
-        icon={<BiCommentDetail color={isActive ? "black" : "#DDDDDD"} />}
-        backgroundColor={isActive ? "white" : "#3963c3"}
-        border="0.5px solid rgba(255, 255, 255, 0.5)"
+        icon={<BiCommentDetail color="black" />}
+        backgroundColor={isActive ? "white" : "rgba(236, 236, 236, 1)"}
+        border="0.5px solid rgba(21, 28, 37, 1)"
         label="Chat"
         title="Chat"
-        transform="scale(1.5)"
+        transform="scale(1.2)"
       />
       <MessageBox isOpen={isOpen} onClose={close} />
     </>

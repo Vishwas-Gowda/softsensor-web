@@ -37,6 +37,7 @@ import Loading from "../Loading/loading";
 const Projects = () => {
   const { user } = useAuth0();
   const [buttonState, setButtonState] = useState(2);
+  const displayAvatarColumn=true;
   const { data } = useGetUserInfoQuery({
     subClaim: user?.sub,
   });
@@ -131,6 +132,7 @@ const Projects = () => {
                         <ProjectLink 
                           projectName={project.name}
                           projectId={project._id}
+                          displayAvatarColumn={displayAvatarColumn}
                         />
                       </Td>
                       <Td  fontFamily="roboto" fontSize="14px">

@@ -28,8 +28,8 @@ const AdjustmentBar = ({ dropDownOpen }) => {
   const [typeToolsToggle, setTypeToolsToggle] = useState(true);
 
   return (
-    <Box className="adjustmentbar" height="6em">
-      <Flex bgColor="rgba(248, 248, 245, 1)" alignItems="center" borderBottom="1px solid #ffffff50">
+    <Box className="adjustmentbar" height="6em" borderTop="1px solid #000">
+      <Flex bgColor="rgba(236, 236, 236, 1)" alignItems="center" borderBottom="1px solid #ffffff50">
         {caseToggle ? <Case changeCount={setCaseToggle} /> : ""}
         {algoToggle ? (
           <Box

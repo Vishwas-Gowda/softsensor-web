@@ -30,7 +30,7 @@ const SlideUser = ({ closeButtonToggle }) => {
     <Box
       width="100%"
       height="6em"
-      borderRight="0.5px solid black"
+      // borderRight="0.5px solid black"
       boxSizing="border-box"
       borderRadius="3px"
       paddingLeft="2px"
@@ -46,18 +46,19 @@ const SlideUser = ({ closeButtonToggle }) => {
       <HStack
         marginRight="40px"
         marginLeft="30px"
-        mt="10px"
+        mt="18px"
         direction="row"
-        spacing={5}
+      alignItems="center"
+      spacing={5}
         className="user_toolbar_box"
       >
         <TypeButton
           onClick={handleToolbarClick}
-          icon={<HiUserGroup color="white" />}
+          icon={<HiUserGroup color="black" />}
           label="User Settings"
-          backgroundColor="#3963c3"
-          border="0.5px solid rgba(255, 255, 255, 0.5)"
-          transform="scale(1.5)"
+          backgroundColor="rgba(236, 236, 236, 1)"
+          border="0.5px solid rgba(21, 28, 37, 1)"
+          transform="scale(1.2)"
         />
         <SlideChat />
         <GenerateReport />

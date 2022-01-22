@@ -5,7 +5,7 @@ import { generatePath, useHistory } from "react-router";
 import { Link as RouteLink } from "react-router-dom";
 import Project from "./project";
 
-const ProjectLink = ({ projectName, projectId }) => {
+const ProjectLink = ({ projectName, projectId ,displayAvatarColumn}) => {
   const { user } = useAuth0();
   const history = useHistory();
   const id = user?.sub.substring(user?.sub.indexOf("|") + 1);
@@ -15,7 +15,7 @@ const ProjectLink = ({ projectName, projectId }) => {
   //   history.push(generatePath("/dashboard/:id/:projectId", { id, projectId }));
   // };
   const handleClick = () => {
-    return <Project projectName={projectName} projectId={projectId} />;
+    return <Project projectName={projectName} projectId={projectId} displayAvatarColumn={displayAvatarColumn}/>;
   };
 
   return (

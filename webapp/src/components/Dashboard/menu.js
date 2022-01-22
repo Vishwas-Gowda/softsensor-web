@@ -77,16 +77,16 @@ const DashboardMenu = () => {
         </Flex>
         <MenuGroup >
           <MenuDivider marginTop="1em" mx={2} borderColor="#000"/>
-          <Link
+          {/* <Link
             as={RouteLink}
             to={`/${userId}/dashboard/recent`}
             _hover={{ textDecoration: "none" }}
-          >
+          > */}
             <MenuItem _hover={{ bg: "#F8F8F5" }} name="recent" className="dashboard__menu__list">
               <Icon as={VscHistory} marginRight={2} width="18px" h="18px" />
               Recently viewed
             </MenuItem>
-          </Link>
+          {/* </Link> */}
           <Link
             as={RouteLink}
             to={`/${userId}/dashboard/projects`}

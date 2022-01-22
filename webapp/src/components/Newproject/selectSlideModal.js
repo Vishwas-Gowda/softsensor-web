@@ -55,15 +55,15 @@ const SelectSlideModal = ({ isOpen, onClose, slides }) => {
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent bg="white">
-        <ModalHeader>Select Slides</ModalHeader>
-        <ModalCloseButton color="red.400" />
+        <ModalHeader fontFamily="roboto" fontWeight="400" fontSize="18px">Select Slides</ModalHeader>
+        <ModalCloseButton color="#000" border ="1px solid #000" />
         <ModalBody>
           <SimpleGrid
             minChildWidth="100px"
             spacing={2}
             p={2}
             borderRadius="5px"
-            bgColor="#3965C550"
+            bgColor="rgba(236, 236, 236, 1)"
             maxW="100%"
           >
             {slides?.map((slide) => {
@@ -87,18 +87,19 @@ const SelectSlideModal = ({ isOpen, onClose, slides }) => {
                         : ""
                     }
                   />
-                  <Text color="#3965C5">{slide.slideName}</Text>
+                  <Text color="#000">{slide.slideName}</Text>
                 </VStack>
               );
             })}
           </SimpleGrid>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="red" mr={3} onClick={onClose}>
+          <Button colorScheme="#fff" color="#000" border="1px solid #000" mr={3} onClick={onClose}>
             Close
           </Button>
           <Button
-            colorScheme="messenger"
+            bgColor="rgba(7, 132, 228, 1)"
+            color="#fff"
             disabled={count === 0}
             onClick={handleSelectedSlides}
           >

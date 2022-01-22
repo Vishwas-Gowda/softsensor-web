@@ -98,10 +98,12 @@ const AnswersPreview = ({ questionnaire }) => {
     <>
       <Button
         my={5}
-        backgroundColor="#0d46bf"
+        backgroundColor="rgba(7, 132, 228, 1)"
         type="submit"
         size="sm"
         width="10em"
+        color="white"
+        ml="10px"
         _hover={{ bg: "#2166fc" }}
         onClick={() => {
           setIsOpen(true);
@@ -119,8 +121,8 @@ const AnswersPreview = ({ questionnaire }) => {
       >
         <AlertDialogContent borderRadius="10px">
           <AlertDialogHeader
-            backgroundColor="#3965C6"
-            color="white"
+            backgroundColor="rgba(236, 236, 236, 1)"
+            color="black"
             padding="5px"
             borderTopRadius="10px"
           >
@@ -132,11 +134,13 @@ const AnswersPreview = ({ questionnaire }) => {
             <HStack>
               <Flex
                 direction="column"
-                backgroundColor="#abc5ff"
-                color="#0d46bf"
+                backgroundColor="rgba(236, 236, 236, 1)"
+                color="black"
                 borderRadius="3px"
                 padding="1em"
                 textAlign="left"
+                fontFamily="inter"
+                fontSize="16px"
                 width="50%"
               >
                 {questionnaire?.questions.map((question, index) => (
@@ -161,7 +165,7 @@ const AnswersPreview = ({ questionnaire }) => {
               </Flex>
               <Spacer />
               <Flex width="50%" direction="column">
-                <Text fontSize="md" color="#0d46bf">
+                <Text fontSize="16px" fontFamily="inter" color="black">
                   Are you sure you want to submit the answers?
                 </Text>
                 <Image
@@ -171,22 +175,22 @@ const AnswersPreview = ({ questionnaire }) => {
                   src={url}
                   marginTop="10px"
                 />
-                <Text fontSize="lg" color="#0d46bf">
+                <Text fontSize="16px" fontFamily="inter" color="black">
                   {location?.state.slideType} Slides
                 </Text>
-                <Text fontSize="xl" color="#0d46bf">
+                <Text fontSize="20px" fontFamily="inter" color="black">
                   {project?.name}
                 </Text>
-                <Text fontSize="md" color="#8aaeff" marginBottom="1em">
+                <Text fontSize="14px" color="rgba(0, 0, 0, 0.4)" marginBottom="1em">
                   {location?.state.viewerId}
                 </Text>
                 <HStack>
                   <Button
                     size="sm"
                     width="10em"
-                    color="#3965C5"
+                    color="#000"
                     backgroundColor="white"
-                    border="1px solid #3965C5"
+                    border="1px solid #000"
                     onClick={() => onClose()}
                   >
                     Cancel
@@ -195,7 +199,7 @@ const AnswersPreview = ({ questionnaire }) => {
                     size="sm"
                     width="10em"
                     color="white"
-                    backgroundColor="#3965C5"
+                    backgroundColor="rgba(7, 132, 228, 1)"
                     _hover={{ bg: "#66a3ff" }}
                     onClick={finalSubmit}
                     disabled={

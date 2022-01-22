@@ -13,7 +13,7 @@ import ImageAction from '../Studies/imageAction';
 
 const Studies = () => {
     return (
-        <Accordion defaultIndex={[0]} allowMultiple>
+        <Accordion defaultIndex={[0]} allowMultiple fontFamily="roboto">
             <AccordionItem borderTop="none">
                 <AccordionButton _focus={{ border: "none" }} paddingLeft="0px">
                     <Box flex="1" textAlign="left">

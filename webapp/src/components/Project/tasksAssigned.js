@@ -39,6 +39,7 @@ const TasksAssigned = ({
   tasks,
   projectType,
   questionnaire,
+  displayAvatarColumn
 }) => {
   const { user } = useAuth0();
   const id = user?.sub.substring(user?.sub.indexOf("|") + 1);
@@ -83,7 +84,9 @@ const TasksAssigned = ({
             ) : (
               <></>
             )}
+            {displayAvatarColumn ?
             <Th isNumeric />
+            :""}
           </Tr>
         </Thead>
         <Tbody>
@@ -195,13 +198,12 @@ const TasksAssigned = ({
                           name={`${member.firstName} ${member.lastName}`}
                           size="sm"
                           // border color should be changed with respect to status of project
-
                           border="2px solid #232F3E"
                         />
                       ))}
                     </Stack>
                   </Td>
-                ) : null}
+                  ) : null} 
               </Tr>
             );
           })}

@@ -8,6 +8,7 @@ const RadioType = ({ question, direction, response, handleChange }) => {
       name={question?._id}
       defaultValue={!_.isEmpty(response) ? response[question?._id] : ""}
       isDisabled={!_.isEmpty(response)}
+      ml="10px"
     >
       <Stack direction={direction} spacing={4} wrap="wrap">
         {question?.choices.map((choice, index) => (

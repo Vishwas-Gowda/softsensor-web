@@ -51,7 +51,7 @@ import useUserAuthentication from "../../hooks/useUserAuthentication";
 import "../../styles/dashboard.css";
 
 
-const Project = () => {
+const Project = ({displayAvatarColumn}) => {
   const { user } = useAuth0();
   const location = useLocation();
   const { data: project, isLoading } = useGetProjectInfoQuery({
@@ -129,7 +129,7 @@ const Project = () => {
                   // px={10}
                   fontFamily="roboto"
                   fontWeight="500"
-                  w="287px"
+                  w="241px"
                   h="40px"
                   border="1px solid blue"
                   color="#3965C5"
@@ -142,7 +142,7 @@ const Project = () => {
                   fontFamily="roboto"
                   fontWeight="500"
                   mx={4}
-                  w="287px"
+                  w="241px"
                   h="40px"
                   backgroundColor="#3965C5"
                   color="white"
@@ -168,6 +168,7 @@ const Project = () => {
                   tasks={project?.cases}
                   projectType={project?.type}
                   questionnaire={project?.questionnaire}
+                  displayAvatarColumn={displayAvatarColumn}
                 />
                 <Spacer />
                 <TeamInfo

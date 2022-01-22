@@ -116,7 +116,7 @@ const ChangeCase = ({ closeToggle }) => {
                 color="black"
                 p="1em"
                 borderRadius="5px"
-                backgroundColor="rgba(255,255,255, 0.2)"
+                backgroundColor="rgba(248, 248, 245, 1)"
                 fontSize="xs"
                 fontWeight="100"
                 align="left"

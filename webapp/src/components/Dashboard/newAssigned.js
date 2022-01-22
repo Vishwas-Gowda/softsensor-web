@@ -34,6 +34,7 @@ import projectIcon from "../../images/new-project-images/project-icon copy.svg";
 
 const NewAssigned = () => {
   const { user } = useAuth0();
+  const displayAvatarColumn=false;
   const [buttonState, setButtonState] = useState(2);
   const { data: projects, isLoading } = useGetUserProjectsQuery({
     subClaim: user?.sub,
@@ -127,6 +128,7 @@ const NewAssigned = () => {
                         <ProjectLink
                           projectName={project?.name}
                           projectId={project?._id}
+                          displayAvatarColumn={displayAvatarColumn}
                         />
                       </Td>
                       <Td  fontFamily="roboto" fontSize="14px">
