@@ -29,13 +29,13 @@ const AdjustmentBar = ({ dropDownOpen }) => {
 
   return (
     <Box className="adjustmentbar" height="6em">
-      <Flex bgColor={bg} alignItems="center" borderBottom="1px solid #ffffff50">
+      <Flex bgColor="rgba(248, 248, 245, 1)" alignItems="center" borderBottom="1px solid #ffffff50">
         {caseToggle ? <Case changeCount={setCaseToggle} /> : ""}
         {algoToggle ? (
           <Box
             width="100%"
             height="6em"
-            borderRight="0.5px solid white"
+            borderRight="0.5px solid black"
             boxSizing="border-box"
             zIndex={4}
           >

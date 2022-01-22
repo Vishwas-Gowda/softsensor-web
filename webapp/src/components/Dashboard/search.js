@@ -12,9 +12,11 @@ const Search = ({w, mr}) => {
             <Input 
                 color="black" 
                 backgroundColor="white"
-                borderRadius="5px" 
+                borderRadius="0px" 
                 type="text" 
-                placeholder="Search"/>
+                placeholder="Search"
+                borderColor="rgba(236, 236, 236, 1)"
+                _placeholder={{color:"#000"}}/>
         </InputGroup>
     );
 };

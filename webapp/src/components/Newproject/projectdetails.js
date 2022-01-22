@@ -19,11 +19,11 @@ const Projectdetails = () => {
 
   return (
     <>
-      <Box className="form_div">
+      <Box className="form_div" fontFamily="roboto" >
         <Box>
           <Text
             htmlFor="project_title"
-            color="#2E519E"
+            color="#000"
             fontSize="14px"
             paddingBottom={3}
           >
@@ -36,15 +36,17 @@ const Projectdetails = () => {
             value={projectDetails.projectName}
             width={590}
             borderRadius={5}
-            bg="#0032a01a"
-            fontSize="16px"
+            bg="#F8F8F5"
+            borderColor="#000"
+            _placeholder={{color:"#000"}}
+            fontSize="14px"
             placeholder="Eg: Digital Pathology"
             onChange={(e) => handleProjectDetails(e)}
           ></Input>
           <Text
             htmlFor="project_desc"
             paddingTop={6}
-            color="#2E519E"
+            color="#000"
             fontSize="14px"
             paddingBottom={3}
           >
@@ -57,16 +59,18 @@ const Projectdetails = () => {
             width={590}
             height={150}
             top="0"
-            fontSize="16px"
-            bg="#0032a01a"
+            fontSize="14px"
+            bg="#F8F8F5"
+            borderColor="#000"
             resize={"none"}
+            _placeholder={{color:"#000"}}
             placeholder="Eg: Write a one- or two-paragraph explanation of what the project aims to accomplish"
             onChange={(e) => handleProjectDetails(e)}
           ></Textarea>
           <Text
             htmlFor="project_type"
             paddingTop={6}
-            color="#2E519E"
+            color="#000"
             // fontSize="16px"
             paddingBottom={3}
             style={{ fontSize: "14px" }}
@@ -79,9 +83,10 @@ const Projectdetails = () => {
             name="projectType"
             value={projectDetails.projectType}
             onChange={(e) => handleProjectDetails(e)}
-            fontSize="16px"
+            fontSize="14px"
             width={590}
-            bg="#0032a01a"
+            bg="#F8F8F5"
+            borderColor="#000"
           >
             <option value="singleSlide">Single-Slide Project</option>
             <option value="multiSlide">Multi-Slide Project</option>
@@ -89,7 +94,7 @@ const Projectdetails = () => {
           <Text
             htmlFor="slide_type"
             paddingTop={6}
-            color="#2E519E"
+            color="#000"
             fontSize="14px"
             paddingBottom={3}
           >
@@ -100,8 +105,9 @@ const Projectdetails = () => {
             name="slideType"
             value={projectDetails.slideType}
             width={590}
-            bg="#0032a01a"
-            fontSize="16px"
+            bg="#F8F8F5"
+            borderColor="#000"
+            fontSize="14px"
             onChange={(e) => handleProjectDetails(e)}
           >
             <option value="H&E">H&E</option>

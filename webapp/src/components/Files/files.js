@@ -9,7 +9,7 @@ const Files = ({ dropDownToggle, dropDownVar }) => {
         pos="fixed"
         zIndex={1}
         variant="unstyled"
-        color="white"
+        color="#000"
         fontSize="sm"
         top={0}
         fontWeight="100"

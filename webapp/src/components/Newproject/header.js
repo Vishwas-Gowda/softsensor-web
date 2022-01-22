@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <Flex
       className="dashboard__header"
-      bg="#3965C5"
-      color="white"
+      bg="#ECECEC"
+      color="#000"
       py={5}
       px={10}
       zIndex="1"

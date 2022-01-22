@@ -31,19 +31,19 @@ const TypeTools = ({ viewerId, typeToolsButtonHandler }) => {
     <Box
       width="100%"
       height="6em"
-      borderRight="0.5px solid white"
+      borderRight="0.5px solid black"
       boxSizing="border-box"
       borderRadius="3px"
     >
       <CloseIcon
-        color="white"
+        color="black"
         transform="scale(0.5)"
         cursor="pointer"
         onClick={handleCloseButtonClick}
         marginInline="calc(100% - 18px)"
         marginTop="-8px"
       />
-      <Text marginLeft="2em" color="#fff" marginTop="-10px">
+      <Text marginLeft="2em" color="black" marginTop="-10px">
         Type
       </Text>
       <HStack

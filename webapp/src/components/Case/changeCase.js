@@ -51,7 +51,7 @@ const ChangeCase = ({ closeToggle }) => {
   return (
     <>
       <CloseIcon
-        color="white"
+        color="black"
         transform="scale(0.5)"
         cursor="pointer"
         onClick={handleCloseButtonClick}
@@ -67,7 +67,7 @@ const ChangeCase = ({ closeToggle }) => {
               marginInline="calc(11.5%)"
               fontSize="35px"
               marginTop="5px"
-              color="#fff"
+              color="#000"
             >
               {currentCaseIndex + 1}
             </Text>
@@ -77,7 +77,7 @@ const ChangeCase = ({ closeToggle }) => {
               marginInline="calc(12.6%)"
               fontSize="20px"
               marginTop="20px"
-              color="#fff"
+              color="#000"
             >
               /{project?.cases.length}
             </Text>
@@ -87,14 +87,14 @@ const ChangeCase = ({ closeToggle }) => {
               marginInline="calc(11.5%)"
               fontSize="15px"
               marginTop="40px"
-              color="#fff"
+              color="#0009"
             >
               Slides
             </Text>
             <Flex justifyContent="space-between">
               <IconButton
                 icon={<ChevronLeftIcon />}
-                color="#fff"
+                color="#000"
                 variant="unstyled"
                 marginTop="15px"
                 cursor="pointer"
@@ -113,7 +113,7 @@ const ChangeCase = ({ closeToggle }) => {
                 width="100%"
                 marginLeft="4px"
                 marginRight="4px"
-                color="white"
+                color="black"
                 p="1em"
                 borderRadius="5px"
                 backgroundColor="rgba(255,255,255, 0.2)"
@@ -132,7 +132,7 @@ const ChangeCase = ({ closeToggle }) => {
               <IconButton
                 icon={<ChevronRightIcon />}
                 variant="unstyled"
-                color="#fff"
+                color="#000"
                 cursor="pointer"
                 minW={0}
                 marginTop="15px"

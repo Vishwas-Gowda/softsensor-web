@@ -75,8 +75,8 @@ const Share = () => {
   return (
     <>
       <Box>
-        <Box className="questions_div" fontFamily="inter">
-          <Text marginTop={-16} fontSize={14} color="#3965C6" marginLeft={2.5}>
+        <Box className="questions_div" fontFamily="roboto">
+          <Text marginTop={-16} fontSize={14} color="#000" marginLeft={2.5}>
             Share with readers
             <br />
             <InputGroup>
@@ -87,7 +87,8 @@ const Share = () => {
                 border="1px"
                 borderColor="#2e519e"
                 opacity={0.6}
-                bg="rgba(0, 50, 160, 0.1)"
+                bg="white"
+                borderColor="rgba(21, 28, 37, 1)"
                 value={value}
                 type="email"
                 onChange={(e) => handleInput(e)}
@@ -97,7 +98,7 @@ const Share = () => {
                 onClick={handleAddMember}
                 cursor="pointer"
                 children={
-                  <AiOutlineUserAdd name="add" color="blue.500" size={20} />
+                  <AiOutlineUserAdd name="add" color="rgba(7, 132, 228, 1)" size={20} />
                 }
               />
             </InputGroup>
@@ -113,23 +114,19 @@ const Share = () => {
               <MenuButton
                 icon={<LinkIcon color="rgba(57, 101, 198, 0.65)" />}
                 as={Button}
-                rightIcon={<BsChevronDown color="#3965C6" w="14px" />}
-                bg="white"
-                fontFamily="inter"
+                rightIcon={<BsChevronDown color= "#000" w="14px"/>}
+                bg="f3f3f3"
+                fontFamily="roboto"
                 fontSize="14px"
-                color="rgba(57, 101, 198, 0.45)"
+                color="#000"
+                fontWeight="400"
               >
                 <LinkIcon marginRight={3} />
                 Anyone with the link
               </MenuButton>
               <MenuList>
-                <MenuItem
-                  fontFamily="inter"
-                  fontSize="14px"
-                  icon={<LinkIcon color="rgba(57, 101, 198, 0.65)" />}
-                >
-                  Anyone with the link
-                </MenuItem>
+                <MenuItem fontFamily="roboto" color="#000"
+                fontSize="14px" icon={<LinkIcon color="#000"/>}>Anyone with the link</MenuItem>
                 {/* <MenuItem icon={<AddIcon />}>Robert Rogers</MenuItem>
                 <MenuItem icon={<AddIcon />}>Zoe Margut</MenuItem> */}
               </MenuList>
@@ -151,12 +148,10 @@ const Share = () => {
                 mt={3}
               />
               <VStack ml={2} align="flex-start" spacing={0} whiteSpace="nowrap">
-                <Text fontSize={16} color="#3965C6" pt={2} fontWeight={500}>
+                <Text fontSize={16} color="#000" pt={2} fontWeight={500}>
                   {`${data?.user.firstName} ${data?.user.lastName} (You)`}
                 </Text>
-                <Text fontSize={12} color="#3965C6">
-                  {data?.user.emailAddress}
-                </Text>
+                <Text fontSize={12} color="#000">{data?.user.emailAddress}</Text>
               </VStack>
               <Spacer />
               <Text
@@ -186,12 +181,10 @@ const Share = () => {
                     spacing={0}
                     whiteSpace="nowrap"
                   >
-                    <Text fontSize={16} color="#3965C6" pt={2} fontWeight={500}>
+                    <Text fontSize={16} color="#000" pt={2} fontWeight={500}>
                       {`${member.firstName} ${member.lastName}`}
                     </Text>
-                    <Text fontSize={12} color="#3965C6">
-                      {member.email}
-                    </Text>
+                    <Text fontSize={12} color="#000">{member.email}</Text>
                   </VStack>
                   <Spacer />
                   <Text

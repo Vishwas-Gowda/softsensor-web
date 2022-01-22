@@ -29,8 +29,8 @@ const LayoutHeader = () => {
   };
 
   return (
-    <div className="header">
-      <Box className="bg-dark" as="header" background="#0032A0">
+    <div >
+      <Box className="bg-dark" as="header" color="#000" background="rgba(236, 236, 236, 1)">
         <Flex
           justifyContent="space-between"
           alignItems="center"
@@ -41,8 +41,8 @@ const LayoutHeader = () => {
           <HStack spacing={8}>
             <IconButton
               icon={<AiOutlineHome />}
-              backgroundColor="#0032A0"
-              _hover={{ bg: "#4070d6" }}
+              backgroundColor="rgba(236, 236, 236, 1)"
+              _hover={{ bg: "#fff" }}
               onClick={handleClick}
             />
             <SlideInfo />

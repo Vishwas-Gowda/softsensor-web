@@ -7,14 +7,15 @@ const LayoutAppSidebar = ({ children }) => {
   return (
     <Flex
       as="section"
-      color="white"
+      color="BLACK"
       w="18%"
       direction="column"
       alignItems="left"
       boxShadow="base"
       zIndex="2"
-      backgroundColor="#3965C5"
+      backgroundColor="rgba(236, 236, 236, 1)"
       overflowX="auto"
+      borderTop="1PX SOLID #000"
       // borderRight="0.5px solid #ffffff"
       // borderBottom="0.5px solid #ffffff"
     >

@@ -33,7 +33,7 @@ const Projectlist = () => {
   });
   return (
     <Flex
-      backgroundColor="white"
+      backgroundColor="#F3F3F3"
       borderRadius="5px"
       marginBottom="20px"
       marginTop="20px"
@@ -47,15 +47,15 @@ const Projectlist = () => {
       ) : (
         <>
           <HStack
-          borderBottom=" 0.5px solid #2E519E"
+          borderBottom=" 0.5px solid #000"
           >
             <Text
-              color="#2E519E"
-              fontWeight="400"
-              borderColor="#3965C5"
+              color="#000"
+              fontWeight="500"
+              borderColor="#000"
               paddingBottom="10px"
               fontSize="20px"
-              fontFamily="inter"
+              fontFamily="roboto"
             >
               Projects
             </Text>
@@ -64,9 +64,9 @@ const Projectlist = () => {
             as={RouteLink}
             to={`/${userId}/dashboard/projects`}
             _hover={{ textDecoration: "none" }}
-            fontSize="14px" color="#0032A0" 
-            fontFamily="inter" marginBottom="0px" 
-            borderBottom=" 0.3px solid #0032A0"
+            fontSize="14px" color="#000" 
+            fontFamily="roboto" marginBottom="0px" 
+            borderBottom=" 0.3px solid #000"
           >View all</Link>
           </HStack>
           <Box overflow="auto">
@@ -75,10 +75,10 @@ const Projectlist = () => {
               marginTop="10px"
             >
               <Thead  >
-                <Tr>
-                  <Th  px="0px" color="#8aaeff" fontSize="14px" fontFamily="inter" fontWeight="400" textTransform="none">Project Name</Th>
-                  <Th  color="#8aaeff" fontSize="14px" fontFamily="inter" fontWeight="400" textTransform="none" >Project Type</Th>
-                  <Th   color="#8aaeff"  fontSize="14px" fontFamily="inter" fontWeight="400" textTransform="none"></Th>
+                <Tr color="#000">
+                  <Th  px="0px"  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">Project Name</Th>
+                  <Th   fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none" >Project Type</Th>
+                  <Th     fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none"></Th>
                 </Tr>
               </Thead>
               <Tbody
@@ -91,18 +91,18 @@ const Projectlist = () => {
                       justifyContent="center"
                       
                     >
-                      <Td px="0px" color="#3965C5" fontWeight="500" fontFamily="inter" fontSize="16px" alignItems="center" display="flex">
+                      <Td px="0px" color="#000" fontWeight="500" fontFamily="roboto" fontSize="16px" alignItems="center" display="flex">
                         <Icon as={AiOutlineFile} marginRight="14px" width="14px" height="14px" />
 
                         <Text> {project.name}</Text>
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px" >
+                      <Td color="rgba(0, 0, 0, 0.5)" fontFamily="roboto" fontSize="14px" >
                         {project.type === "singleSlide"
                           ? "Single Slide"
                           : "Multi Slide"}
                       </Td>
                       <Td  p="0px" pt="15px" float="right"  >
-                            <Button width= "127px" height= "24px" bgColor=" #0032A0" color="#fff" fontFamily="inter" fontSize="14px" fontWeight="500"><ProjectLink projectId={project._id} projectName="View Details"/></Button>
+                            <Button width= "127px" height= "24px" bgColor="#0784E4" color="#fff" fontFamily="roboto" fontSize="14px" fontWeight="500" ><ProjectLink projectId={project._id} projectName="View Details"/></Button>
                       </Td>
                      
                     </Tr>

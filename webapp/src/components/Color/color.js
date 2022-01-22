@@ -84,12 +84,12 @@ const Color = ({ viewerId, colorsButtonHandler }) => {
       <Box
         width="100%"
         height="6em"
-        borderRight="0.5px solid white"
+        borderRight="0.5px solid black"
         boxSizing="border-box"
         borderRadius="3px"
       >
         <CloseIcon
-          color="white"
+          color="black"
           transform="scale(0.5)"
           cursor="pointer"
           onClick={handleCloseButtonClick}
@@ -99,7 +99,7 @@ const Color = ({ viewerId, colorsButtonHandler }) => {
         <HStack
           spacing={0}
           align="center"
-          color="white"
+          color="black"
           className="color_toolbar_box"
         >
           <Box width="100%" marginTop="-2.5em">
@@ -109,7 +109,7 @@ const Color = ({ viewerId, colorsButtonHandler }) => {
             </Box>
           </Box>
           <Box width="10em" height="6em">
-            <Text marginLeft="1em" marginTop="-1.2em">
+            <Text marginLeft="1em" marginTop="-1.2em" color="#000">
               Width
             </Text>
             <DrawWidthPicker align="center" />

@@ -14,7 +14,7 @@ const CreateQuestionnaire = () => {
   );
 
   return (
-    <Box pos="absolute" left="40px" top="106px" color="#2E519E" fontFamily="inter">
+    <Box pos="absolute" left="40px" top="106px" color="#000" fontFamily="inter">
       <Text fontSize="14px">Slide Type</Text>
       <Text my={4} fontSize="20px" fontWeight="500">
         {projectDetails.slideType}

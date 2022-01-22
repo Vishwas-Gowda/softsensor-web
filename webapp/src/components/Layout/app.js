@@ -72,7 +72,7 @@ const LayoutApp = () => {
           <>
             <ChevronUpIcon
               onClick={showNavbar}
-              color="white"
+              // color="white"
               className="close_button_navbar"
             />
             <AdjustmentBar
@@ -85,11 +85,11 @@ const LayoutApp = () => {
             pos="fixed"
             zIndex={3}
             right={0}
-            backgroundColor="#3965C5"
+            backgroundColor="rgba(248, 248, 245, 1)"
             title="Show Navbar"
             onClick={showNavbar}
           >
-            {<ChevronDownIcon color="white" fontWeight="bold" />}
+            {<ChevronDownIcon color="#000" fontWeight="bold" />}
           </Button>
         )}
         <LayoutInnerBody>
@@ -102,10 +102,11 @@ const LayoutApp = () => {
                 zIndex={3}
                 left="18%"
                 height="100vh"
-                color="white"
-                backgroundColor="#3965C5"
+                color="BLACK"
+                backgroundColor="rgba(236, 236, 236, 1)"
                 padding="1px 1px 1px 1px"
-                borderLeft="0.1px solid white"
+                mt="1px"
+                // borderLeft="0.1px solid white"
               />
 
               <LayoutAppSidebar />
@@ -117,10 +118,10 @@ const LayoutApp = () => {
               style={{ cursor: "pointer" }}
               zIndex={3}
               height="100vh"
-              color="white"
-              backgroundColor="#3965C5"
+              color="BLACK"
+              backgroundColor="rgba(236, 236, 236, 1)"
               padding="1px 1px 1px 1px"
-              borderLeft="0.1px solid white"
+              // borderLeft="0.1px solid white"
             />
           )}
           <LayoutAppBody>

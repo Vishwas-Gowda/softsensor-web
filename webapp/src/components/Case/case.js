@@ -16,7 +16,7 @@ const Case = (props) => {
         <Box
           width="100%"
           height="6em"
-          borderRight="0.5px solid white"
+          borderRight="0.5px solid black"
           boxSizing="border-box"
           borderRadius="3px"
           paddingLeft="10px"
@@ -24,7 +24,7 @@ const Case = (props) => {
         >
           <CloseIcon
             onClick={handleCloseButtonClick}
-            color="white"
+            color="black"
             transform="scale(0.5)"
             cursor="pointer"
             marginInline="calc(100% - 12px)"
@@ -35,7 +35,7 @@ const Case = (props) => {
             marginTop="-7px"
             marginLeft="4px"
             marginRight="4px"
-            color="white"
+            color="black"
             p="1em"
             borderRadius="5px"
             backgroundColor="rgba(255,255,255, 0.2)"
@@ -45,9 +45,9 @@ const Case = (props) => {
             spacing={-1}
             className="case_toolbar_box"
           >
-            <Text>Slide Info/Case</Text>
-            <Text>History</Text>
-            <Text>Patient information</Text>
+            <Text >Slide Info/Case</Text>
+            <Text >History</Text>
+            <Text >Patient information</Text>
           </VStack>
         </Box>
       ) : (

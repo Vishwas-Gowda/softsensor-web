@@ -50,7 +50,7 @@ const ToolbarButton = ({
         {...restProps}
       />
       {/* </Tooltip> */}
-      <Text color="white" align="center" fontSize="0.6rem">
+      <Text color="black" align="center" fontSize="0.6rem">
         {label}
       </Text>
     </Box>

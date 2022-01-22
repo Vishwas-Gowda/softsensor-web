@@ -32,7 +32,7 @@ const ShareLink = (restProps) => {
         h={6}
         px="27px"
         borderRadius="4px"
-        rightIcon={<FaShare color="#3963c3" />}
+        rightIcon={<FaShare color="#000" />}
         backgroundColor="#DDDDDD"
         _hover={{
           backgroundColor: "white",
@@ -41,7 +41,7 @@ const ShareLink = (restProps) => {
           backgroundColor: "white",
           border: "none",
         }}
-        color="#3963c3"
+        color="#000"
         fontFamily="sans-serif"
         textTransform="capitalize"
         fontSize="xs"

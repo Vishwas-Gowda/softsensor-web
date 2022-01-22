@@ -14,15 +14,15 @@ const Header = () => {
   return (
     <Flex
       className="dashboard__header"
-      bg="#3965C5"
-      color="white"
+      bg="#ECECEC"
+      color="black"
       py={5}
       px={10}
       zIndex="1"
       sx={{ position: "-webkit-sticky", position: "sticky", top: "0" }}
       alignItems="center"
     >
-      <Text fontFamily="roboto" fontSize="24px" mt={"5px"}>Welcome</Text>
+      <Text fontFamily="roboto" fontWeight="500" fontSize="24px" mt={"5px"}>Welcome</Text>
       <Spacer />
       <Search w={300} />
       <LogoutButton />

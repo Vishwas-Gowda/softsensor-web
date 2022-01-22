@@ -8,7 +8,7 @@ import Share from "./shareproject";
 import { MdCardMembership } from "react-icons/md";
 import { BsShareFill } from "react-icons/bs";
 import { FaClipboardList } from "react-icons/fa";
-import { AiOutlineSelect } from "react-icons/ai";
+import {AiOutlineFileText,AiOutlineFileExclamation ,AiOutlineSelect} from 'react-icons/ai';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import DashboardMenu from "../Dashboard/menu";
 import Header from "./header";
@@ -23,10 +23,6 @@ import Loading from "../Loading/loading";
 import { getAccessToken, getUserId } from "../../hooks/utility";
 import useUserAuthentication from "../../hooks/useUserAuthentication";
 import Projectlist from "./projectlist";
-import projectIcon1 from "../../images/new-project-images/project.svg";
-import projectIcon2 from "../../images/new-project-images/selection.svg";
-import projectIcon3 from "../../images/new-project-images/questionnaire.svg";
-import projectIcon4 from "../../images/new-project-images/Share 1.svg";
 
 const Newproject = () => {
   const [activeOption, setActiveOption] = useState("projectDetails");
@@ -51,17 +47,17 @@ const Newproject = () => {
   const [buttonStyleProjectDetails, setButtonStyleProjectDetails] =
     useState("selected_button");
   const [buttonBackgroundProjectDetails, setButtonBackgroundProjectDetails] =
-    useState("#0032a0");
+    useState("#0784E4");
   const [buttonStyleSelectSlide, setButtonStyleSelectSlide] =
     useState("unselected_button");
   const [buttonBackgroundSelectSlide, setButtonBackgroundSelectSlide] =
-    useState("#ffffff");
+    useState("#F3F3F3");
   const [buttonStyleQuestionnaire, setButtonStyleQuestionnaire] =
     useState("unselected_button");
   const [buttonBackgroundQuestionnaire, setButtonBackgroundQuestionnaire] =
-    useState("#ffffff");
+    useState("##F3F3F3");
   const [buttonStyleShare, setButtonStyleShare] = useState("unselected_button");
-  const [buttonBackgroundShare, setButtonBackgroundShare] = useState("#ffffff");
+  const [buttonBackgroundShare, setButtonBackgroundShare] = useState("#F3F3F3");
   const [buttonText, setButtonText] = useState("Next");
 
   const handleCreateProject = async () => {
@@ -86,13 +82,13 @@ const Newproject = () => {
   const handleActiveOptionProjectDetails = (e) => {
     setActiveOption("projectDetails");
     setButtonStyleProjectDetails("selected_button");
-    setButtonBackgroundProjectDetails("#0032a0");
+    setButtonBackgroundProjectDetails("#0784E4");
     setButtonStyleSelectSlide("unselected_button");
     setButtonStyleShare("unselected_button");
     setButtonStyleQuestionnaire("unselected_button");
-    setButtonBackgroundSelectSlide("#ffffff");
-    setButtonBackgroundQuestionnaire("#ffffff");
-    setButtonBackgroundShare("#ffffff");
+    setButtonBackgroundSelectSlide("#F3F3F3");
+    setButtonBackgroundQuestionnaire("#F3F3F3");
+    setButtonBackgroundShare("#F3F3F3");
     setButtonText("Next");
   };
   const handleActiveOptionSelectSlide = (e) => {
@@ -101,10 +97,10 @@ const Newproject = () => {
     setButtonStyleShare("unselected_button");
     setButtonStyleQuestionnaire("unselected_button");
     setButtonStyleProjectDetails("unselected_button");
-    setButtonBackgroundSelectSlide("#0032a0");
-    setButtonBackgroundProjectDetails("#ffffff");
-    setButtonBackgroundQuestionnaire("#ffffff");
-    setButtonBackgroundShare("#ffffff");
+    setButtonBackgroundSelectSlide("#0784E4");
+    setButtonBackgroundProjectDetails("#F3F3F3");
+    setButtonBackgroundQuestionnaire("#F3F3F3");
+    setButtonBackgroundShare("#F3F3F3");
     setButtonText("Next");
   };
   const handleActiveOptionQuestionnaire = (e) => {
@@ -113,10 +109,10 @@ const Newproject = () => {
     setButtonStyleProjectDetails("unselected_button");
     setButtonStyleSelectSlide("unselected_button");
     setButtonStyleShare("unselected_button");
-    setButtonBackgroundQuestionnaire("#0032a0");
-    setButtonBackgroundProjectDetails("#ffffff");
-    setButtonBackgroundSelectSlide("#ffffff");
-    setButtonBackgroundShare("#ffffff");
+    setButtonBackgroundQuestionnaire("#0784E4");
+    setButtonBackgroundProjectDetails("#F3F3F3");
+    setButtonBackgroundSelectSlide("#F3F3F3");
+    setButtonBackgroundShare("#F3F3F3");
     setButtonText("Next");
   };
   const handleActiveOptionShare = (e) => {
@@ -125,10 +121,10 @@ const Newproject = () => {
     setButtonStyleProjectDetails("unselected_button");
     setButtonStyleSelectSlide("unselected_button");
     setButtonStyleQuestionnaire("unselected_button");
-    setButtonBackgroundShare("#0032a0");
-    setButtonBackgroundQuestionnaire("#ffffff");
-    setButtonBackgroundProjectDetails("#ffffff");
-    setButtonBackgroundSelectSlide("#ffffff");
+    setButtonBackgroundShare("#0784E4");
+    setButtonBackgroundQuestionnaire("#F3F3F3");
+    setButtonBackgroundProjectDetails("#F3F3F3");
+    setButtonBackgroundSelectSlide("#F3F3F3");
     setButtonText("Create");
   };
 
@@ -156,10 +152,10 @@ const Newproject = () => {
         marginLeft="14em"
         height="100vh"
         direction="column"
-        backgroundColor="#eeeeee"
+        backgroundColor="#fff"
       >
         <Header />
-        <Box className="div_overlay" fontFamily="inter">
+        <Box className="div_overlay" fontFamily="roboto">
           <Box>
             <Button
               className={buttonStyleProjectDetails}
@@ -168,9 +164,10 @@ const Newproject = () => {
               background={buttonBackgroundProjectDetails}
               marginRight={3}
               fontSize="14px"
+              fontFamily="roboto"
               fontWeight={400}
             >
-              <Image src={projectIcon1} marginRight="12px" w="14px" h="14px" />
+              <Icon as={AiOutlineFileText} marginRight="12px" w="14px" h="14px" />
               Project details
             </Button>
             <Button
@@ -179,10 +176,11 @@ const Newproject = () => {
               onClick={(e) => handleActiveOptionSelectSlide(e)}
               background={buttonBackgroundSelectSlide}
               fontSize="14px"
+              fontFamily="roboto"
               fontWeight={400}
               marginRight={3}
             >
-              <Image src={projectIcon2} marginRight="12px" w="14px" h="14px" />
+              <Icon as={AiOutlineSelect} marginRight="12px" w="14px" h="14px" />
               Select Slides
             </Button>
             <Button
@@ -190,11 +188,12 @@ const Newproject = () => {
               name="questionnaire"
               onClick={(e) => handleActiveOptionQuestionnaire(e)}
               background={buttonBackgroundQuestionnaire}
+              fontFamily="roboto"
               fontWeight={400}
               fontSize="14px"
               marginRight={3}
             >
-              <Image src={projectIcon3} marginRight="12px" w="14px" h="14px" />
+              <Icon as={AiOutlineFileExclamation} marginRight="12px" w="14px" h="14px" />
               Questionnaire
             </Button>
             <Button
@@ -203,10 +202,11 @@ const Newproject = () => {
               onClick={(e) => handleActiveOptionShare(e)}
               background={buttonBackgroundShare}
               fontWeight={400}
+              fontFamily="roboto"
               fontSize="14px"
               marginRight={3}
             >
-              <Image src={projectIcon4} marginRight="12px" w="14px" h="14px" />
+              <Icon as={BsShareFill} marginRight="12px" w="14px" h="14px" />
               Share
             </Button>
           </Box>
@@ -221,7 +221,7 @@ const Newproject = () => {
             <Button
               className="reset"
               width={127}
-              fontFamily="inter"
+              fontFamily="roboto"
               fontSize="14px"
               fontWeight="500"
               onClick={handleReset}
@@ -230,11 +230,10 @@ const Newproject = () => {
             </Button>
             <Button
               className="savennext"
-              bg="#0032a0"
-              colorScheme="#0032a0"
+              bg="#0784E4"
               color="white"
               width={127}
-              fontFamily="inter"
+              fontFamily="roboto"
               fontSize="14px"
               fontWeight="500"
               marginLeft="-100px"

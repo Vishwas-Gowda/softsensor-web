@@ -48,12 +48,12 @@ const DashboardMenu = () => {
       autoSelect={false}
     >
       <MenuList
-        bg="#3965C6"
+        bg="#ECECEC"
         height="100vh"
         className="dashboard__menu"
         borderRadius="0px"
         border="none"
-        color="white"
+        color="black"
         position="fixed"
       >
         <Flex>
@@ -66,23 +66,23 @@ const DashboardMenu = () => {
             alt="User"
           />
           <Flex marginTop="1em" direction="column" width="9em">
-            <Text color="white" className="menu__username">
+            <Text color="black" className="menu__username">
               {userInfo?.user.firstName + " " + userInfo?.user.lastName}
             </Text>
             <Text  className="menu__email">{userInfo?.user.emailAddress}</Text>
-            <Link className="menu__managelink" color="white" marginTop="10px">
+            <Link className="menu__managelink" color="black" marginTop="10px">
               Manage your account
             </Link>
           </Flex>
         </Flex>
         <MenuGroup >
-          <MenuDivider marginTop="1em" mx={2} />
+          <MenuDivider marginTop="1em" mx={2} borderColor="#000"/>
           <Link
             as={RouteLink}
             to={`/${userId}/dashboard/recent`}
             _hover={{ textDecoration: "none" }}
           >
-            <MenuItem _hover={{ bg: "#66a3ff" }} name="recent" className="dashboard__menu__list">
+            <MenuItem _hover={{ bg: "#F8F8F5" }} name="recent" className="dashboard__menu__list">
               <Icon as={VscHistory} marginRight={2} width="18px" h="18px" />
               Recently viewed
             </MenuItem>
@@ -93,7 +93,7 @@ const DashboardMenu = () => {
             _hover={{ textDecoration: "none" }}
           >
             <MenuItem
-              _hover={{ bg: "#66a3ff" }}
+              _hover={{ bg: "#F8F8F5" }}
               name="projects"
               className="dashboard__menu__list"
               alignItems="center"
@@ -109,7 +109,7 @@ const DashboardMenu = () => {
             
           >
             <MenuItem
-              _hover={{ bg: "#66a3ff" }}
+              _hover={{ bg: "#F8F8F5" }}
               name="newProject"
               className="dashboard__menu__list"
               
@@ -122,26 +122,26 @@ const DashboardMenu = () => {
             </MenuItem>
           </Link>
 
-          <MenuItem _hover={{ bg: "#66a3ff" }} className="dashboard__menu__list">
+          <MenuItem _hover={{ bg: "#F8F8F5" }} className="dashboard__menu__list">
             <Icon as={AiOutlineFolderOpen} marginRight={2} w={5} h={7} />
             Open
             <Spacer/>
             <Icon as={RiArrowRightSLine} marginRight={2} w={5} h={4}/>
           </MenuItem>
-          <MenuDivider m={2} />
-          <MenuItem _hover={{ bg: "#66a3ff" }} className="dashboard__menu__list__username">
-            <Icon as={BsCircleFill} marginRight={2} w={4} h={4} />
+          <MenuDivider borderColor="#000" m={2} />
+          <MenuItem _hover={{ bg: "#F8F8F5" }} className="dashboard__menu__list__username">
+            <Icon as={BsCircleFill} marginRight={2} w={4} h={4} color="#7ABCEF" />
             {userInfo?.user.firstName + " " + userInfo?.user.lastName}
           </MenuItem>
-          <MenuItem _hover={{ bg: "#66a3ff" }} className="dashboard__menu__list">
+          <MenuItem _hover={{ bg: "#F8F8F5" }} className="dashboard__menu__list">
             Team Project
           </MenuItem>
-          <MenuDivider m={2} />
-          <MenuItem _hover={{ bg: "#66a3ff" }} className="dashboard__menu__list">
+          <MenuDivider m={2} borderColor="#000" />
+          <MenuItem _hover={{ bg: "#F8F8F5" }} className="dashboard__menu__list">
             <Icon as={BsPlusLg} marginRight={2} width="14px" height="14px" />
             Create new team
           </MenuItem>
-          <MenuItem _hover={{ bg: "#66a3ff" }} className="dashboard__menu__list">
+          <MenuItem _hover={{ bg: "#F8F8F5" }} className="dashboard__menu__list">
             <Icon as={BiHelpCircle} marginRight={2} width="18px" height="18px"/>
             Help
           </MenuItem>

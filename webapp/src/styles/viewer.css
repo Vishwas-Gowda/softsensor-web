@@ -74,12 +74,12 @@
 }
 
 .close_button_navbar {
-  color: white;
+  color: black;
   position: fixed;
   right: 5px;
   top: 20px;
   cursor: pointer;
-  background-color: #3965c5;
+  background-color: rgba(248, 248, 245, 1);
   border-radius: 3px 3px 0px 0px;
   padding: 1px 1px 1px 1px;
   transform: scale(1.5);

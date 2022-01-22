@@ -46,7 +46,7 @@ const Projects = () => {
   return (
     <Flex
       className="recently__viewed"
-      backgroundColor="white"
+      backgroundColor="#F3F3F3"
       borderRadius="5px"
       marginBottom="20px"
       marginTop="20px"
@@ -54,6 +54,7 @@ const Projects = () => {
       padding="20px"
       paddingBottom="50px"
       direction="column"
+      fontFamily="roboto"
     >
       {isLoading ? (
         <Loading />
@@ -62,15 +63,15 @@ const Projects = () => {
           <HStack>
             <Text
               className="recently__viewed__title"
-              color="#3965C5"
+              color="rgba(21, 28, 37, 1)"
               marginLeft="15px"
               marginBottom="20px"
               fontWeight="500"
-              borderColor="#3965C5"
+              borderColor="#151C25"
               borderBottom="1px"
               paddingBottom="5px"
               fontSize="20px"
-              fontFamily="inter"
+              fontFamily="roboto"
               // fontSize="2xl"
             >
               Projects
@@ -78,71 +79,36 @@ const Projects = () => {
             <Spacer />
             <IconButton
               variant="outline"
-              onClick={() => setButtonState(1)}
-              icon={<IoGridOutline />}
+              onClick={()=>setButtonState(1)}
+              icon={<IoGridOutline  />}
               size="18px"
               p={0.5}
-              colorScheme={buttonState === 1 ? "blue" : "black"}
+              colorScheme={buttonState===1 ? "blue":"black"}
               borderRadius="8px"
+              
             />
             <IconButton
-              variant="outline"
-              onClick={() => setButtonState(2)}
-              icon={<BsList />}
+            variant="outline"
+              onClick={()=>setButtonState(2)}
+              icon={<BsList/>}
               size="18px"
               p={0.5}
-              colorScheme={buttonState === 2 ? "blue" : "black"}
+              colorScheme={buttonState===2 ? "blue":"black"}
               borderRadius="8px"
             />
           </HStack>
           <Box overflowX="auto">
-            <Table variant="unstyled" marginTop="0px">
+            <Table
+              variant="unstyled"
+              marginTop="0px"
+            >
               <Thead>
-                <Tr>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    File Name
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Last Viewed
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Project Owner
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Project Type
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    isNumeric
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
+                <Tr color="#151C25">
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">File Name</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none" >Last Viewed</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">Project Owner</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none" >Project Type</Th>
+                  <Th  isNumeric fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">
                     Progress
                   </Th>
                 </Tr>
@@ -155,36 +121,26 @@ const Projects = () => {
                 {projects?.map((project) => {
                   return (
                     <Tr
-                      borderBottom="1px solid #3965C5"
-                      _hover={{ bg: "#bacfff" }}
+                      borderBottom="1px solid #000"
+                      _hover={{color: "rgba(7, 132, 228, 1)" }}
+                      color="#151C25"
                       key={project._id}
                     >
-                      <Td
-                        color="#3965C5"
-                        fontWeight="500"
-                        fontFamily="inter"
-                        fontSize="16px"
-                        alignItems="center"
-                        display="flex"
-                      >
-                        <Icon
-                          as={VscHistory}
-                          marginRight="14px"
-                          width="14px"
-                          height="14px"
-                        />
-                        <ProjectLink
+                      <Td  fontWeight="500" fontFamily="roboto" fontSize="16px" alignItems="center" display="flex">
+                        <Icon as={VscHistory} marginRight="14px" width="14px" height="14px" />
+                        <ProjectLink 
                           projectName={project.name}
                           projectId={project._id}
                         />
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px">
+                      <Td  fontFamily="roboto" fontSize="14px">
+                        {" "}
                         {moment(project.lastUpdated).fromNow()}
                       </Td>
-                      <Td color="#8aaeff" fontSize="14px" fontFamily="inter">
+                      <Td  fontSize="14px" fontFamily="roboto">
                         {data?.user.firstName + " " + data?.user.lastName}
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px">
+                      <Td  fontFamily="roboto" fontSize="14px">
                         {/* <Stack direction="row" style={{ width: "120px" }} justify="end">
                                     <CircularProgressbar value="75" text="75%" styles={buildStyles({ textSize: '30px', pathColor: '#fe740d', textColor: '#fe740d' })} />
                                     <CircularProgressbar value="85" text="85%" styles={buildStyles({ textSize: '30px', pathColor: '#67818d', textColor: '#67818d' })} />
@@ -212,8 +168,8 @@ const Projects = () => {
                             project.cases.length * (project.members.length + 1)
                           }`}
                           isLabelVisible={project.totalResponses > 0}
-                          bgColor="darkblue"
-                          baseBgColor="#66a3ff"
+                          bgColor="#0784E4"
+                          baseBgColor="#7ABCEF"
                           labelSize="12px"
                           width="162px"
                           height="24px"

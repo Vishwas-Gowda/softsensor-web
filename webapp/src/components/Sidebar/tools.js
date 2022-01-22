@@ -96,7 +96,7 @@ const SidebarTools = () => {
         <TabList backgroundColor="rgba(255,255,255,0.2)">
           <Tab
             _focus={{ border: "none" }}
-            _selected={{ bg: "#3965C5" }}
+            _selected={{ bg: "rgba(228, 229, 232, 1)" }}
             fontSize="xs"
             py={2}
           >
@@ -104,7 +104,7 @@ const SidebarTools = () => {
           </Tab>
           <Tab
             _focus={{ border: "none" }}
-            _selected={{ bg: "#3965C5" }}
+            _selected={{ bg: "rgba(228, 229, 232, 1)" }}
             fontSize="xs"
             py={2}
           >

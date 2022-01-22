@@ -11,7 +11,7 @@ import {
   Stack,
   Text,
   Spinner,
-  Box,
+  Box
 } from "@chakra-ui/react";
 import { BsCircleFill } from "react-icons/bs";
 import {
@@ -49,7 +49,7 @@ const LastTask = () => {
   return (
     <Flex
       className="last__task"
-      backgroundColor="white"
+      backgroundColor="#F3F3F3"
       margin="20px"
       // width="26.5em"
       padding="20px"
@@ -59,15 +59,15 @@ const LastTask = () => {
     >
       <Text
         className="last__task__head"
-        color="#3965C5"
+        color="rgba(0, 21, 63, 1)"
         fontWeight="400"
-        borderColor="#3965C5"
+        borderColor="#000"
         borderBottom="1px"
         paddingBottom="5px"
         width="95%"
         marginLeft="15px"
         fontSize="20px"
-        fontFamily="inter"
+        fontFamily="roboto"
       >
         Last Task
       </Text>
@@ -81,13 +81,13 @@ const LastTask = () => {
           <HStack>
             <Text
               className="last__task__title"
-              color="#3965C5"
-              fontWeight="400"
+              color="#00153F"
+              fontWeight="500"
               marginLeft="15px"
               marginTop="10px"
               paddingBottom="10px"
               fontSize="16px"
-              fontFamily="inter"
+              fontFamily="roboto"
             >
               {recentCaseWorkedOn?.slides[0].slideName}
             </Text>
@@ -97,34 +97,25 @@ const LastTask = () => {
                     <Avatar name="Rakesh Gautam" size="sm" />
                     <Avatar name="Mila Maghudiya" size="sm" />
                 </Stack> */}
-            <Text color="#8aaeff" fontSize="14px" fontFamily="inter">{`${
-              recentCaseWorkedOn?.slides.length - 1
-            } slides remaining`}</Text>
+               <Text color="#000" fontSize="14px"
+              fontFamily="roboto">{`${recentCaseWorkedOn?.slides.length-1} slides remaining`}</Text> 
           </HStack>
-          <HStack>
-            <Box>
-              <Text
-                color="#8aaeff"
-                fontSize="14px"
-                margin="0px 0px 8px 15px"
-                fontFamily="inter"
-              >
-                {recentCaseWorkedOn?.name}
-                <Icon as={BsCircleFill} mx={1} w={1} h={1} />
-                {moment(recentCaseWorkedOn?.createdAt).format("MMM DD, YYYY")}
-              </Text>
-              <Text
-                color="#8aaeff"
-                fontSize="14px"
-                fontFamily="inter"
-                marginLeft="15px"
-              >
-                {`Created by ${
-                  recentCaseWorkedOn?.caseOwner.firstName +
-                  recentCaseWorkedOn?.caseOwner.lastName
-                }`}
-              </Text>
-            </Box>
+          <HStack >
+            <Box >
+          <Text color="#000" fontSize="14px" margin="0px 0px 8px 15px"
+              fontFamily="roboto" >
+            {recentCaseWorkedOn?.name}
+            <Icon as={BsCircleFill} mx={1} w={1} h={1} />{" "}
+            {moment(recentCaseWorkedOn?.createdAt).format("MMM DD, YYYY")}
+          </Text>
+          <Text color="#000" fontSize="14px"
+              fontFamily="roboto" marginLeft="15px">
+            {`Created by ${
+              recentCaseWorkedOn?.caseOwner.firstName +
+              recentCaseWorkedOn?.caseOwner.lastName
+            }`}
+          </Text>
+          </Box>
             <Spacer />
             <Link
               as={RouteLink}
@@ -138,7 +129,7 @@ const LastTask = () => {
               _hover={{ textDecoration: "none" }}
             >
               <Button
-                backgroundColor="#3965c5"
+                backgroundColor="#0784E4"
                 color="white"
                 fontWeight="500"
                 fontFamily="inter"
@@ -152,7 +143,7 @@ const LastTask = () => {
                 Continue
               </Button>
             </Link>
-          </HStack>
+            </HStack>
         </>
       )}
     </Flex>

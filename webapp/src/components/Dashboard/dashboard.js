@@ -40,7 +40,7 @@ const Dashboard = () => {
         marginLeft="14em"
         height="100vh"
         direction="column"
-        backgroundColor="#eeeeee"
+        backgroundColor="#fff"
       >
         <Header />
         <Flex height="100%" w="100%" direction="row" marginTop="20px">

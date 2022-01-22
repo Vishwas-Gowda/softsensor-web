@@ -3,14 +3,14 @@
   height: 750px;
   left: 337px;
   top: 195px;
-  background: #ffffff;
+  background: #F3F3F3;
   border-radius: 5px;
 }
 
 .selected_button {
   left: 16px;
   top: 18px;
-  background: #0032a0;
+  background: #0784E4;
   width: 141px;
   height: 10px;
   border-radius: 5px;
@@ -25,7 +25,7 @@
   width: 141px;
   height: 30px;
   border-radius: 5px;
-  color: #2e519e;
+  color: #000;
   font-family:inter;
   font-weight: 400;
 }
@@ -34,10 +34,10 @@
   position: relative;
   width: 1041px;
   height: 0px;
-  border-radius: 0.5px solid #2e519e;
+  border-radius: 0.5px solid #000;
   top: 45px;
   left: 18px;
-  border: 0.5px solid #2e519e;
+  border: 0.5px solid #000;
   opacity: 0.3;
 }
 
@@ -53,7 +53,7 @@
   background: rgba(0, 50, 160, 0.1);
   margin-top: 18px;
   border-radius: 5px;
-  border: 1px solid rgba(46, 81, 158, 0.6);
+  border: 1px solid #000;
   padding: 23.33px;
 }
 
@@ -63,7 +63,7 @@
   background: rgba(0, 50, 160, 0.1);
   margin-top: 270px;
   border-radius: 5px;
-  border: 1px solid rgba(46, 81, 158, 0.6);
+  border: 1px solid #000;
   padding-left: 23.33px;
   padding-top: 0;
 }
@@ -74,7 +74,7 @@
   background: rgba(0, 50, 160, 0.1);
   margin-top: 330px;
   border-radius: 5px;
-  border: 1px solid rgba(46, 81, 158, 0.6);
+  border: 1px solid #000;
   padding-left: 23.33px;
   padding-top: 0;
 }
@@ -87,17 +87,17 @@
 .reset {
   width: 127px;
   height: 32px;
-  border: 1px solid #0032a0;
+  border: 1px solid #0784E4;
   left: 16px;
   border-radius: 5px;
   font-size: 14px;
-  color: #0032a0;
+  color: #0784E4;
   font-weight: bold;
 }
 
 .savennext {
   left: 177px;
-  background: #0032a0;
+  background: #0784E4;
   border-radius: 5px;
   width: 127px;
   height: 32px;
@@ -110,7 +110,7 @@
   position: relative;
   width: 411px;
   height: 1px;
-  border-radius: 0.5px solid #2e519e;
+  border-radius: 0.5px solid #000;
   top: 57px;
   left: 18px;
   background: #2e519e;
@@ -187,7 +187,15 @@
     height: 750px;
     left: 337px;
     top: 195px;
-    background: #ffffff;
+    background: #F3F3F3;
+  }
+  .right_div {
+    width:451px;
+    height: 370px;
+    left: 1238px;
+    top: 92px;
+    position: relative;
+  
   }
   .right_div {
     width:451px;

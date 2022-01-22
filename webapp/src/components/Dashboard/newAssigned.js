@@ -15,9 +15,9 @@ import {
   Tr,
   Th,
   Td,
-  Image,
+  Image
 } from "@chakra-ui/react";
-import { AiOutlineProject } from "react-icons/ai";
+import { AiOutlineFileProtect } from "react-icons/ai";
 import { BsList } from "react-icons/bs";
 import { IoGridOutline } from "react-icons/io5";
 import ProgressBar from "@ramonak/react-progress-bar";
@@ -41,7 +41,7 @@ const NewAssigned = () => {
   return (
     <Flex
       className="new__assign"
-      backgroundColor="white"
+      backgroundColor="#F3F3F3"
       marginBottom="20px"
       marginTop="20px"
       // width="95%"
@@ -58,15 +58,15 @@ const NewAssigned = () => {
             <Text
               className="new__assign__title"
               // fontSize="2xl"
-              color="#3965C5"
+              color="rgba(21, 28, 37, 1)"
               fontWeight="500"
-              borderColor="#3965C5"
+              borderColor="#000"
               borderBottom="1px"
               paddingBottom="5px"
               marginLeft="15px"
               width="11.5em"
               fontSize="20px"
-              fontFamily="inter"
+              fontFamily="roboto"
             >
               New Assigned Projects
             </Text>
@@ -97,53 +97,13 @@ const NewAssigned = () => {
               size="md"
               className="newAssigned_table"
             >
-              <Thead>
+              <Thead color="#151C25">
                 <Tr margin="0px">
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    File Name
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Assigned Date
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Project Owner
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    Project Type
-                  </Th>
-                  <Th
-                    color="#8aaeff"
-                    fontSize="14px"
-                    fontFamily="inter"
-                    fontWeight="400"
-                    textTransform="none"
-                  >
-                    No. of Slides
-                  </Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">File Name</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">Assigned Date</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">Project Owner</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">Project Type</Th>
+                  <Th  fontSize="14px" fontFamily="roboto" fontWeight="400" textTransform="none">No. of Slides</Th>
                 </Tr>
               </Thead>
               <Tbody>
@@ -151,17 +111,11 @@ const NewAssigned = () => {
                   return (
                     <Tr
                       key={project?._id}
-                      borderBottom="1px solid #3965C5"
-                      _hover={{ bg: "#bacfff" }}
+                      borderBottom="1px solid #000"
+                      _hover={{color: "rgba(7, 132, 228, 1)" }}
+                      color="#151C25"
                     >
-                      <Td
-                        color="#3965C5"
-                        fontWeight="500"
-                        fontFamily="inter"
-                        fontSize="16px"
-                        alignItems="center"
-                        display="flex"
-                      >
+                      <Td   fontWeight="500" fontFamily="roboto" fontSize="16px" alignItems="center" display="flex">
                         {/* <Image
                         src={projectIcon}
                           as={AiOutlineProject}
@@ -169,24 +123,19 @@ const NewAssigned = () => {
                           w="14px"
                           h="14px"
                         /> */}
-                        <Image
-                          src={projectIcon}
-                          width="15px"
-                          height="15px"
-                          marginRight="10px"
-                        />
+                  <Icon as={AiOutlineFileProtect} width="15px" height="15px" marginRight="10px" />
                         <ProjectLink
                           projectName={project?.name}
                           projectId={project?._id}
                         />
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px">
+                      <Td  fontFamily="roboto" fontSize="14px">
                         On {moment(project?.assignedDate).format("DD MMM")}
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px">
+                      <Td  fontFamily="roboto" fontSize="14px">
                         {`${project?.owner.firstName}  ${project?.owner.lastName}`}
                       </Td>
-                      <Td color="#8aaeff" fontFamily="inter" fontSize="14px">
+                      <Td  fontFamily="roboto" fontSize="14px" >
                         {project?.type === "singleSlide"
                           ? "Single Slide"
                           : "Multi Slide"}
