@@ -67,19 +67,19 @@ const LayoutApp = () => {
     <Flex as={Div100vh} h="100vh" direction="column">
       <LayoutOuterBody>
         <LayoutHeader />
-        <Files dropDownToggle={setDropDownOpen} dropDownVar={dropDownOpen} />
+        {/* <Files dropDownToggle={setDropDownOpen} dropDownVar={dropDownOpen} />
         {navbar ? (
           <>
             <ChevronUpIcon
               onClick={showNavbar}
               // color="white"
               className="close_button_navbar"
-            />
+            /> */}
             <AdjustmentBar
               dropDownOpen={dropDownOpen}
               setDropDownOpen={setDropDownOpen}
             />
-          </>
+          {/* </>
         ) : (
           <Button
             pos="fixed"
@@ -91,7 +91,7 @@ const LayoutApp = () => {
           >
             {<ChevronDownIcon color="#000" fontWeight="bold" />}
           </Button>
-        )}
+        )} */}
         <LayoutInnerBody>
           {sidebar ? (
             <>

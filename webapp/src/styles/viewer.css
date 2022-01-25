@@ -97,3 +97,6 @@
   color: white;
   transition: all 0.1s;
 }
+.header__nav {
+  padding: 7.5px 16px;
+}
