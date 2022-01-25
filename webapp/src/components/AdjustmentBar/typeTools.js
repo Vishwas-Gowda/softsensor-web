@@ -23,44 +23,36 @@ const TypeTools = ({ viewerId, typeToolsButtonHandler }) => {
     }
   };
 
-  const handleCloseButtonClick = () => {
-    typeToolsButtonHandler(false);
-  };
+  // const handleCloseButtonClick = () => {
+  //   typeToolsButtonHandler(false);
+  // };
 
   return (
-    <Box
-      width="100%"
-      height="6em"
-      borderRight="0.5px solid black"
-      boxSizing="border-box"
-      borderRadius="3px"
-    >
-      <CloseIcon
-        color="black"
-        transform="scale(0.5)"
-        cursor="pointer"
-        onClick={handleCloseButtonClick}
-        marginInline="calc(100% - 18px)"
-        marginTop="-8px"
-      />
-      <Text marginLeft="2em" color="black" marginTop="-10px">
-        Type
-      </Text>
+    // <Box
+    //   width="100%"
+    //   boxSizing="border-box"
+    //   borderRadius="3px"
+    //   h="42px"
+    //   top="124px"
+    // >
+      
       <HStack
-        paddingLeft="55px"
-        paddingTop="5px"
-        transform="scale(1.1)"
-        pos="absolute"
-        className="typetools_toolbar_box"
+      top="124px"
+      pos="fixed"
+        // paddingLeft="55px"
+        // paddingTop="5px"
+        // transform="scale(1.1)"
+        // pos="absolute"
+        // className="typetools_toolbar_box"
       >
         <Line viewerId={viewerId} />
         <Square viewerId={viewerId} />
         <Circle viewerId={viewerId} />
         <Draw viewerId={viewerId} />
         <TypeText viewerId={viewerId} />
-        <RemoveObject viewerId={viewerId} />
+        {/* <RemoveObject viewerId={viewerId} /> */}
       </HStack>
-    </Box>
+    // </Box>
   );
 };
 

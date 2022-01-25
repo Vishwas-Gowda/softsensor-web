@@ -87,13 +87,13 @@ const RemoveObject = ({ viewerId }) => {
   return (
     <TypeButton
       onClick={handleRemoveObject}
-      icon={<RiDeleteBin6Line size={12} />}
+      icon={<RiDeleteBin6Line size={18} color="#151C25"/>}
       disabled={!isActiveObject}
-      backgroundColor={!isActiveObject ? "#898888" : "#dddddd"}
-      color={!isActiveObject ? "black" : "#3963c3"}
-      _focus={{ backgroundColor: "white", color: "black" }}
-      _hover={{ backgroundColor: !isActiveObject ? "#898888" : "#dddddd" }}
-      label="Remove Item"
+      // backgroundColor={!isActiveObject ? "#898888" : "#dddddd"}
+      // color={!isActiveObject ? "black" : "#3963c3"}
+      // _focus={{ backgroundColor: "white", color: "black" }}
+      // _hover={{ backgroundColor: !isActiveObject ? "#898888" : "#dddddd" }}
+      title="Remove Item"
     />
   );
 };

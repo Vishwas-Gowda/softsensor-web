@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ChatIcon } from "@chakra-ui/icons";
-import { BiCommentDetail } from "react-icons/bi";
+import {BsChatLeftText} from 'react-icons/bs';
 import ToolbarButton from "../ViewerToolbar/button";
 import { useSelector, useDispatch } from "react-redux";
 import { updateActiveDrawerTool } from "../../state/reducers/drawerReducer";
@@ -29,12 +29,12 @@ const SlideChat = () => {
     <>
       <TypeButton
         onClick={handleToolbarClick}
-        icon={<BiCommentDetail color="black" />}
-        backgroundColor={isActive ? "white" : "rgba(236, 236, 236, 1)"}
-        border="0.5px solid rgba(21, 28, 37, 1)"
+        icon={<BsChatLeftText  size={18} color="#151C25" />}
+        // backgroundColor={isActive ? "white" : "#3963c3"}
+        // border="0.5px solid rgba(255, 255, 255, 0.5)"
         label="Chat"
         title="Chat"
-        transform="scale(1.2)"
+        // transform="scale(1.5)"
       />
       <MessageBox isOpen={isOpen} onClose={close} />
     </>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from "../reactSlider";
 import { updateZoomValue } from "../../state/reducers/fabricOverlayReducer";
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { FiZoomIn, FiZoomOut } from "react-icons/fi";
 
 const ZoomSlider = ({ viewerId }) => {
@@ -22,6 +22,7 @@ const ZoomSlider = ({ viewerId }) => {
     dispatch(updateZoomValue({ id: viewerId, value: val }));
   };
 
+
   useEffect(() => {
     if (!viewer) return;
     viewer.addHandler("zoom", (e) => {
@@ -33,14 +34,19 @@ const ZoomSlider = ({ viewerId }) => {
   const label = ["1", "5", "10", "20", "30", "40"];
 
   return (
-    <Box>
-      <Slider
+    <Box onChange={(val) => handleSlider(val)}
+    valueRenderer={(value) => `${value}%`}
+    markersLabel={label}
+    viewerId={viewerId}
+    mx="15px">
+      {/* <Slider
         value={zoomValue}
         valueLabelStyle={{ display: "none" }}
         min={1}
         max={40}
         markers={6}
         stepSize={8}
+        fontColor="white"
         grabCursor={false}
         trackLength={100}
         trackShape="squared"
@@ -58,7 +64,10 @@ const ZoomSlider = ({ viewerId }) => {
         onChange={(val) => handleSlider(val)}
         valueRenderer={(value) => `${value}%`}
         viewerId={viewerId}
-      />
+      /> */}
+      <Text  >
+    {zoomValue}x
+          </Text> 
     </Box>
   );
 };

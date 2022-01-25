@@ -37,22 +37,25 @@ const ToolbarButton = ({
         openDelay={500}
       > */}
       <IconButton
-        size="lg"
+        width="26px"
+        height="34px"
         variant="unstyled"
-        backgroundColor="rgba(255,255,255, 0.5)"
+        backgroundColor="#F8F8F5"
         color="#3963c3"
         pl="10px"
-        p="10px"
-        borderRadius="3px"
+        mr="5px"
+        borderRadius="0px"
+        _active={{bgColor:"rgba(228, 229, 232, 1)",border:"0.5px solid rgba(0, 21, 63, 1)"}}
         _focus={{
           border: "none",
         }}
+        // border="0.5px solid #F8F8F5"
         {...restProps}
       />
       {/* </Tooltip> */}
-      <Text color="black" align="center" fontSize="0.6rem">
+      {/* <Text color="white" align="center" fontSize="0.6rem">
         {label}
-      </Text>
+      </Text> */}
     </Box>
   );
 };

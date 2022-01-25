@@ -13,11 +13,12 @@ import {
   VStack,
   Text,
 } from "@chakra-ui/react";
-import { FiZoomIn, FiZoomOut } from "react-icons/fi";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import ZoomSlider from "../ZoomSlider/slider";
 import { updateCurrentViewer } from "../../state/reducers/viewerReducer";
 import { updateTool } from "../../state/reducers/fabricOverlayReducer";
+import ToolbarButton from "../ViewerToolbar/button";
 
 const ViewerControls = ({ viewerId }) => {
   const { viewerWindow } = useSelector((state) => state.fabricOverlayState);
@@ -79,9 +80,9 @@ const ViewerControls = ({ viewerId }) => {
     return (
       <IconButton
         size="sm"
-        backgroundColor="white"
-        boxShadow="lg"
-        _focus={{ border: "none" }}
+        // backgroundColor="#E4E5E8"
+        // boxShadow="lg"
+        // _focus={{ border: "none" }}
         {...restProps}
       />
     );
@@ -110,7 +111,7 @@ const ViewerControls = ({ viewerId }) => {
           <Text fontWeight="bold">Slide {viewerId.slice(-1)}: Name/info</Text>
         </Box>
       )}
-      <Box position="absolute" right="20px" top="20px" zIndex="1">
+      <Box zIndex="1" mr="25px">
         {/* <ButtonGroup spacing="3" size="lg">
         <Tooltip label="Zoom in" aria-label="Zoom in">
           <IconButton
@@ -147,25 +148,31 @@ const ViewerControls = ({ viewerId }) => {
             />
           </Tooltip>  
       </ButtonGroup> */}
-        <VStack
-          w="fit-content"
-          backgroundColor="white"
-          border="1px solid #3965C6"
-          borderRadius="5px"
-          p={1}
+        <HStack
+          // w="fit-content"
+          // backgroundColor="white"
+          // border="1px solid #3965C6"
+          // borderRadius="5px"
+          // p={1}
         >
-          <ZoomButton
-            icon={<FiZoomIn color="#3965C6" size={20} />}
-            border="1px solid #3965C6"
+          <ToolbarButton
+            icon={<AiOutlinePlus color="#151C25" size={18} />}
+            // border="1px solid #3965C6"
+            backgroundColor="#F8F8F5"
             onClick={handleZoomIn}
+            title="Zoom In"
+            mr="0px"
           />
           <ZoomSlider viewerId={viewerId} />
-          <ZoomButton
-            icon={<FiZoomOut color="#3965C6" size={20} />}
-            border="1px solid #3965C6"
+          <ToolbarButton
+            icon={<AiOutlineMinus color="#151C25" size={18} />}
+            // border="1px solid #3965C6"
+            backgroundColor="#F8F8F5"
             onClick={handleZoomOut}
+            title="Zoom Out"
+            mr="0px"
           />
-        </VStack>
+        </HStack>
       </Box>
     </>
   );

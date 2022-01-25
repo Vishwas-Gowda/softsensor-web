@@ -53,7 +53,7 @@ const LayoutApp = () => {
 
   const [sidebar, setSidebar] = useState(true);
   const [navbar, setNavbar] = useState(true);
-  const [dropDownOpen, setDropDownOpen] = useState(false);
+  // const [dropDownOpen, setDropDownOpen] = useState(false);
 
   const showSidebar = () => {
     setSidebar(!sidebar);
@@ -76,8 +76,8 @@ const LayoutApp = () => {
               className="close_button_navbar"
             /> */}
             <AdjustmentBar
-              dropDownOpen={dropDownOpen}
-              setDropDownOpen={setDropDownOpen}
+              // dropDownOpen={dropDownOpen}
+              // setDropDownOpen={setDropDownOpen}
             />
           {/* </>
         ) : (

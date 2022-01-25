@@ -1,5 +1,8 @@
 import { React } from "react";
-import { FiMove } from "react-icons/fi";
+import { BsArrowsMove,BsCircleHalf } from "react-icons/bs";
+import { RiNavigationFill ,RiPencilRulerLine } from "react-icons/ri";
+import {IoMdRefresh} from 'react-icons/io';
+import {AiOutlineSliders} from 'react-icons/ai';
 import ToolbarButton from "../ViewerToolbar/button";
 import Screenshot from "../Screenshot/screenshot";
 import MultiView from "../MultiView/multiView";
@@ -9,32 +12,81 @@ import { updateTool } from "../../state/reducers/fabricOverlayReducer";
 import { CloseIcon } from "@chakra-ui/icons";
 import { Box, HStack, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+import { HiOutlinePencilAlt } from "react-icons/hi";
+import Rotate from "../Rotate/Rotate";
+import TypeTools from "../AdjustmentBar/typeTools";
 
 const Move = ({ viewerId, toolsButtonHandler }) => {
   const { activeTool } = useSelector((state) => state.fabricOverlayState);
-  const isActive = activeTool === "Move";
   const dispatch = useDispatch();
-  const [closeButton, setCloseButton] = useState(true);
-  const handleCloseButtonClick = () => {
-    setCloseButton(false);
-    toolsButtonHandler(false);
+  const [typeToolsToggle, setTypeToolsToggle] = useState(false);
+
+  const isActive = activeTool === "Pencil";
+  const handleAnnotationsClick = () => {
+    dispatch(updateTool({ tool: isActive ? "" : "Pencil" }));
+    setTypeToolsToggle(typeToolsToggle => !typeToolsToggle);
   };
 
   const handleClick = () => {
-    dispatch(updateTool({ tool: isActive ? "" : "Move" }));
+    dispatch(updateTool({ tool: isActive ? "" : "Select" }));
   };
 
   return (
-    <>
-      <Box
+    <Flex direction="column">
+    <Flex alignItems="center" mx="16px" >
+      <ToolbarButton
+        icon={<RiNavigationFill size={18} color="#151C25"/>}
+        title="Select"
+        // backgroundColor={isActive ? "#E4E5E8" : ""}
+        // border={isActive ? " 0.5px solid #00153F" :""}
+        // onClick={handleClick}
+      />
+      <ToolbarButton
+        icon={<BsArrowsMove   size={18} color="#151C25"/>}
+        title="Move"
+      />
+      <Rotate viewerId={viewerId}/>
+      <ToolbarButton
+      icon={<HiOutlinePencilAlt size={18} color='#151C25'/>}
+      backgroundColor={isActive ? "#E4E5E8" : ""}
+        border={isActive ? " 0.5px solid #00153F" :""}
+      title="Annotations"
+      onClick={handleAnnotationsClick}
+      />
+      
+      <ToolbarButton
+      icon={<AiOutlineSliders size={18} color='#151C25'/>}
+      title="Filters"
+      />
+      <ToolbarButton
+      icon={<BsCircleHalf size={18} color='#151C25'/>}
+      title=""
+      />
+      <ToolbarButton
+      icon={<RiPencilRulerLine size={18} color='#151C25'/>}
+      title=""
+      />
+
+    </Flex>
+    {/* <Flex>
+    {typeToolsToggle ? (
+          <TypeTools
+            viewerId={viewerId}
+            typeToolsButtonHandler={setTypeToolsToggle}
+          />
+        ) : (
+          ""
+        )}
+    </Flex> */}
+      {/* <Box
         width="100%"
         height="6em"
-        borderRight="0.5px solid black"
+        borderRight="0.5px solid white"
         boxSizing="border-box"
         borderRadius="3px"
       >
         <CloseIcon
-          color="black"
+          color="white"
           transform="scale(0.5)"
           cursor="pointer"
           onClick={handleCloseButtonClick}
@@ -48,7 +100,6 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
           justifyContent="space-evenly"
           marginTop="-2px"
           className="move_toolbar_box"
-          color="#000"
         >
           <ToolbarButton
             label="Move"
@@ -61,8 +112,8 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
           <Screenshot />
           <MultiView />
         </Flex>
-      </Box>
-    </>
+      </Box> */}
+    </Flex>
   );
 };
 

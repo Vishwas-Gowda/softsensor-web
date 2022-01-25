@@ -16,7 +16,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import TypeButton from "../typeButton";
-import { FaShare } from "react-icons/fa";
+import { RiShareForwardLine } from "react-icons/ri";
 import { BiLink } from "react-icons/bi";
 
 const ShareLink = (restProps) => {
@@ -27,30 +27,30 @@ const ShareLink = (restProps) => {
   return (
     <>
       <Button
-        size="sm"
+        // size="sm"
         variant="solid"
-        h={6}
-        px="27px"
-        borderRadius="4px"
-        rightIcon={<FaShare color="#000" />}
-        backgroundColor="rgba(248, 248, 245, 1)"
+        h="32px"
+        // px="27px"
+        ml="15px"
+        borderRadius="0px"
+        rightIcon={<RiShareForwardLine color="#fff" size={18} />}
+        backgroundColor="#0784E4"
         _hover={{
-          backgroundColor: "white",
+          backgroundColor: "#0784E4",
         }}
         _focus={{
-          backgroundColor: "white",
+          backgroundColor: "#0784E4",
           border: "none",
         }}
-        color="#000"
+        color="#fff"
         fontFamily="inter"
-        fontWeight="400"
-        textTransform="capitalize"
-        fontSize="xs"
+        fontSize="14px"
+        fontWeight="500"
         {...restProps}
         onClick={() => {
           setIsOpen(true);
         }}
-        transform="scale(1.5)"
+        // transform="scale(1.5)"
       >
         Share
       </Button>

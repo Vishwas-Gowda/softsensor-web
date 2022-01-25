@@ -108,7 +108,7 @@ const Viewer = ({ viewerId, tile }) => {
       position="relative"
       w="100%"
     >
-      {isBrowser && <ViewerControls viewerId={viewerId} />}
+      {/* {isBrowser && <ViewerControls viewerId={viewerId} />} */}
     </Box>
   );
 };

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { IconButton, Tooltip } from "@chakra-ui/react";
+import { IconButton, Flex} from "@chakra-ui/react";
 import { RiArrowGoBackFill, RiArrowGoForwardLine } from "react-icons/ri";
-import useButtonSize from "hooks/use-button-size";
+// import useButtonSize from "hooks/use-button-size";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "fabric-history/src/index";
+import ToolbarButton from "../ViewerToolbar/button";
 
-const UndoRedo = () => {
-  const buttonSize = useButtonSize();
-  const { fabricOverlay } = useSelector((state) => state.fabricOverlayState);
+const UndoRedo = ({viewerId}) => {
+  // const buttonSize = useButtonSize();
+  const { fabricOverlay } = useSelector((state) => state.fabricOverlayState.viewerWindow[viewerId]);
   const [canvas, setCanvas] = useState();
   const params = useParams();
 
@@ -34,26 +35,20 @@ const UndoRedo = () => {
   };
 
   return (
-    <>
-      <Tooltip label="Undo" aria-label="Undo">
-        <IconButton
-          icon={<RiArrowGoBackFill />}
-          aria-label="Undo"
-          size={buttonSize}
+    <Flex ml="18px" >
+        <ToolbarButton
+          icon={<RiArrowGoBackFill color="#151C25"/>}
           onClick={handleUndo}
-          variant="ghost"
+          title="Undo"
+          mr="8px"
         />
-      </Tooltip>
-      <Tooltip label="Redo" aria-label="Redo">
-        <IconButton
-          icon={<RiArrowGoForwardLine />}
-          aria-label="Redo"
-          size={buttonSize}
+        <ToolbarButton
+          icon={<RiArrowGoForwardLine  color="#151C25"/>}
           onClick={handleRedo}
-          variant="ghost"
+          title="Redo"
+          mr="8px"
         />
-      </Tooltip>
-    </>
+    </Flex>
   );
 };
 
