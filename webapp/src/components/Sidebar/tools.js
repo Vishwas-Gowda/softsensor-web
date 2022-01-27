@@ -8,8 +8,11 @@ import {
   Tab,
   TabPanel,
   Text,
+  Icon,
+  Flex
 } from "@chakra-ui/react";
 import { BsFillPeopleFill } from "react-icons/bs";
+import { HiOutlineFilter} from 'react-icons/hi';
 import { useDispatch, useSelector } from "react-redux";
 import "../../styles/styles.css";
 import ActivityFeed from "../Feed/activityFeed";
@@ -91,25 +94,48 @@ const SidebarTools = () => {
     //   <Questions />
     //   <Analysis />
     // </HStack>
-    <Box className="sidebar_tools">
-      <Tabs isFitted size="10px">
-        <TabList backgroundColor="rgba(255,255,255,0.2)">
+    <Box   bgColor="#fff" minwidth="306px" padding="0px" margin="0px">
+      <Tabs isFitted size="10px" >
+        <TabList backgroundColor="#F8F8F5" fontSize="14px" fontWeight="500" fontFamily="inter" >
           <Tab
             _focus={{ border: "none" }}
-            _selected={{ bg: "rgba(228, 229, 232, 1)" }}
-            fontSize="xs"
+            _selected={{ bg: "#E4E5E8",
+            borderLeft:"0.5px solid #000000",border:"0.5px solid #000000",borderTop:"none" }}
+            // fontSize="xs"
+            color="#00153F"
             py={2}
+            border="0.5px solid #000"
+            borderRight="none"
+            borderTop="none"
+            fontFamily="inter"
           >
             Studies
           </Tab>
           <Tab
             _focus={{ border: "none" }}
-            _selected={{ bg: "rgba(228, 229, 232, 1)" }}
-            fontSize="xs"
+            _selected={{ bg: "#E4E5E8",border:"0.5px solid #000000",borderTop:"none" }}
+            // fontSize="xs"
+            color="#00153F"
             py={2}
+            border="0.5px solid #000"
+            borderLeft="none"
+            borderTop="none"
+            fontFamily="inter"
           >
             Questions
           </Tab>
+          {/* <Tab
+            _focus={{ border: "none" }}
+            _selected={{ bg: "#E4E5E8" ,border:"0.5px solid #000000"}}
+            // fontSize="xs"
+            color="#00153F"
+            py={2}
+            border="0.5px solid #000000"
+            borderRight="none"
+            fontFamily="inter"
+          >
+            Annotations
+          </Tab> */}
           {/* <Tab
             _focus={{ border: "none" }}
             _selected={{ bg: "#3965C5" }}
@@ -128,17 +154,22 @@ const SidebarTools = () => {
           >
             Analysis
           </Tab> */}
+          
         </TabList>
+        <Flex flex="1"  alignItems="center" justifyContent="flex-end" borderTop="none" my="10px"  bgColor="#ECECEC" h="32px">
+          <Icon as={HiOutlineFilter} size={18} mr="13px"/>
+          <Text mr="15px" fontFamily="inter" fontWeight="500" fontSize="14px">Sort by </Text>
+        </Flex>
         <TabPanels>
-          <TabPanel>
+          <TabPanel p="0px">
             <Studies />
           </TabPanel>
-          <TabPanel>
+          <TabPanel p="0px" mt="-10px">
             <Questions />
           </TabPanel>
-          {/* <TabPanel>
+          <TabPanel p="0px">
             <Annotations />
-          </TabPanel> */}
+          </TabPanel>
           {/* <TabPanel>
             <Analysis />
           </TabPanel> */}

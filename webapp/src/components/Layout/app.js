@@ -30,6 +30,7 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { resetViewerIds } from "../../state/reducers/viewerReducer";
 import "../../styles/viewer.css";
 import Files from "../Files/files";
+import { useMediaQuery } from "@chakra-ui/media-query";
 import { resetResponse } from "../../state/reducers/slideQnaReducer";
 
 const LayoutApp = () => {
@@ -53,6 +54,7 @@ const LayoutApp = () => {
 
   const [sidebar, setSidebar] = useState(true);
   const [navbar, setNavbar] = useState(true);
+  const [ifBiggerScreen] = useMediaQuery("(min-width:1920px)");
   // const [dropDownOpen, setDropDownOpen] = useState(false);
 
   const showSidebar = () => {
@@ -100,7 +102,7 @@ const LayoutApp = () => {
                 onClick={showSidebar}
                 style={{ cursor: "pointer" }}
                 zIndex={3}
-                left="18%"
+                left={ifBiggerScreen ? "16%" : "275px" }
                 height="100vh"
                 color="BLACK"
                 backgroundColor="rgba(236, 236, 236, 1)"
@@ -121,6 +123,7 @@ const LayoutApp = () => {
               color="BLACK"
               backgroundColor="rgba(236, 236, 236, 1)"
               padding="1px 1px 1px 1px"
+              mt="1px"
               // borderLeft="0.1px solid white"
             />
           )}

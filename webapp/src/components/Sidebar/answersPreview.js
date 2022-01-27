@@ -96,14 +96,19 @@ const AnswersPreview = ({ questionnaire }) => {
 
   return (
     <>
+    <Box bgColor="rgba(236, 236, 236, 1)">
       <Button
         my={5}
         backgroundColor="rgba(7, 132, 228, 1)"
         type="submit"
-        size="sm"
+        // size="sm"
+        h="32px"
         width="10em"
         color="white"
-        ml="10px"
+        fontWeight="500"
+        fontSize="16px"
+        fontFamily="inter"
+        ml="20px"
         _hover={{ bg: "#2166fc" }}
         onClick={() => {
           setIsOpen(true);
@@ -111,6 +116,7 @@ const AnswersPreview = ({ questionnaire }) => {
       >
         Submit
       </Button>
+      </Box>
       <AlertDialog
         motionPreset="slideInBottom"
         size="3xl"
@@ -165,7 +171,7 @@ const AnswersPreview = ({ questionnaire }) => {
               </Flex>
               <Spacer />
               <Flex width="50%" direction="column">
-                <Text fontSize="16px" fontFamily="inter" color="black">
+                <Text fontSize="16px" fontFamily="inter" fontWeight="500" color="black">
                   Are you sure you want to submit the answers?
                 </Text>
                 <Image
@@ -190,8 +196,11 @@ const AnswersPreview = ({ questionnaire }) => {
                     width="10em"
                     color="#000"
                     backgroundColor="white"
-                    border="1px solid #000"
+                    border="1px solid #00153F"
                     onClick={() => onClose()}
+                    fontSize="16px"
+                    fontFamily="inter"
+                    fontWeight="500"
                   >
                     Cancel
                   </Button>
@@ -206,6 +215,9 @@ const AnswersPreview = ({ questionnaire }) => {
                       questionnaire?.questions.length !==
                       _.keys(response).length
                     }
+                    fontSize="16px"
+                    fontFamily="inter"
+                    fontWeight="500"
                   >
                     Save & Next
                   </Button>
