@@ -36,6 +36,7 @@ const ToolbarButton = ({
         placement="bottom"
         openDelay={500}
       > */}
+      
       <IconButton
         width="26px"
         height="34px"
@@ -45,11 +46,10 @@ const ToolbarButton = ({
         pl="10px"
         mr="5px"
         borderRadius="0px"
-        _active={{bgColor:"rgba(228, 229, 232, 1)",border:"0.5px solid rgba(0, 21, 63, 1)"}}
+        _active={{bgColor:"rgba(228, 229, 232, 1)",border:"0.5px solid #00153F"}}
         _focus={{
           border: "none",
         }}
-        // border="0.5px solid #F8F8F5"
         {...restProps}
       />
       {/* </Tooltip> */}

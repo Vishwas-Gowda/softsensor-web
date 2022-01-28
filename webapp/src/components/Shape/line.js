@@ -16,9 +16,10 @@ const Line = ({ viewerId }) => {
   return (
     <TypeButton
       pl="0px"
-      icon={<BsSlash size={25} />}
-      backgroundColor={isActive ? "#8fa8e1" : "#dddddd"}
-      color={isActive ? "black" : "#3963c3"}
+      icon={<BsSlash size={25} color="#151C25" />}
+      backgroundColor={isActive ? "#E4E5E8" : ""}
+      // color={isActive ? "black" : "#3963c3"}
+      borderRadius="0px"
       label="Line"
       onClick={handleClick}
     />

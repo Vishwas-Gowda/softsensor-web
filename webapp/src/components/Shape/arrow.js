@@ -17,8 +17,9 @@ const Arrow = () => {
     <TypeButton
       pl="0px"
       icon={<BsArrowUpRight size={22} />}
-      backgroundColor={isActive ? "#8fa8e1" : "#dddddd"}
-      color={isActive ? "black" : "#3963c3"}
+      backgroundColor={isActive ? "#E4E5E8" : ""}
+      // color={isActive ? "black" : "#3963c3"}
+      borderRadius="0px"
       label="Line"
       onClick={handleClick}
     />

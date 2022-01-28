@@ -10,6 +10,7 @@ import ToolbarButton from "../ViewerToolbar/button";
 import SlideChat from '../Chat/chat';
 import ShareLink from '../Share/shareLink';
 import Fullscreen from '../Fullscreen/Fullscreen';
+import Screenshot from '../Screenshot/screenshot';
 
 function ScreenTools({viewerId}) {
     return (
@@ -19,7 +20,7 @@ function ScreenTools({viewerId}) {
             
             {/* Add respective tools */}
 
-            <ToolbarButton
+          <ToolbarButton
             icon={<BsGrid3X3Gap size={18} color='#151C25'/>}
             title="Grid"
           />
@@ -27,18 +28,14 @@ function ScreenTools({viewerId}) {
             icon={<MdOutbox size={18} color='#151C25'/>}
             title="WSI"
           />
+          <Screenshot />
+          <Fullscreen viewerId={viewerId}/>
           <ToolbarButton
-          icon={<BiScreenshot size={18} color='#151C25'/>}
-          title="Screenshot"
-        />
-        <Fullscreen viewerId={viewerId}/>
-         <ToolbarButton
-          icon={<FiDownload size={18} color='#151C25'/>}
-          title="Download"
-        />
-        
-        <SlideChat />
-        <ShareLink />
+            icon={<FiDownload size={18} color='#151C25'/>}
+            title="Download"
+          />
+          <SlideChat />
+          <ShareLink />
         </Flex>
         <Icon as={GrMoreVertical} size={18}  ml="20px" mr="30px" color="#151C25"/>
         </>

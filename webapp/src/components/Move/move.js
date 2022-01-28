@@ -15,15 +15,17 @@ import { useState } from "react";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import Rotate from "../Rotate/Rotate";
 import TypeTools from "../AdjustmentBar/typeTools";
+import { useMediaQuery } from "@chakra-ui/media-query";
 
 const Move = ({ viewerId, toolsButtonHandler }) => {
+  const [ifBiggerScreen] = useMediaQuery("(min-width:2000px)");
   const { activeTool } = useSelector((state) => state.fabricOverlayState);
   const dispatch = useDispatch();
   const [typeToolsToggle, setTypeToolsToggle] = useState(false);
 
-  const isActive = activeTool === "Pencil";
+  const isActive = activeTool === "Annotations";
   const handleAnnotationsClick = () => {
-    dispatch(updateTool({ tool: isActive ? "" : "Pencil" }));
+    dispatch(updateTool({ tool: isActive ? "" : "Annotations" }));
     setTypeToolsToggle(typeToolsToggle => !typeToolsToggle);
   };
 
@@ -32,7 +34,7 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
   };
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" >
     <Flex alignItems="center" mx="16px" >
       <ToolbarButton
         icon={<RiNavigationFill size={18} color="#151C25"/>}
@@ -48,8 +50,8 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
       <Rotate viewerId={viewerId}/>
       <ToolbarButton
       icon={<HiOutlinePencilAlt size={18} color='#151C25'/>}
-      backgroundColor={isActive ? "#E4E5E8" : ""}
-        border={isActive ? " 0.5px solid #00153F" :""}
+      // backgroundColor={isActive ? "#E4E5E8" : ""}
+        // border={isActive ? " 0.5px solid #00153F" :""}
       title="Annotations"
       onClick={handleAnnotationsClick}
       />
@@ -68,7 +70,7 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
       />
 
     </Flex>
-    {/* <Flex>
+    <Flex ml={ifBiggerScreen ? "100px" :""}>
     {typeToolsToggle ? (
           <TypeTools
             viewerId={viewerId}
@@ -77,7 +79,7 @@ const Move = ({ viewerId, toolsButtonHandler }) => {
         ) : (
           ""
         )}
-    </Flex> */}
+    </Flex>
       {/* <Box
         width="100%"
         height="6em"

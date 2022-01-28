@@ -184,8 +184,9 @@ const TypeText = ({ viewerId }) => {
     <TypeButton
       onClick={handleToolbarButtonClick}
       icon={<FiType />}
-      backgroundColor={isActive ? "#8fa8e1" : "#dddddd"}
-      color={isActive ? "black" : "#3963c3"}
+      backgroundColor={isActive ? "#E4E5E8" : ""}
+      // color={isActive ? "black" : "#3963c3"}
+      borderRadius="0px"
       label="Type Text"
     />
     // {isActive && (
