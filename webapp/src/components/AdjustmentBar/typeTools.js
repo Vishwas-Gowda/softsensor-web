@@ -46,7 +46,7 @@ const TypeTools = ({ viewerId, typeToolsButtonHandler }) => {
         pos="absolute"
         paddingLeft="55px"
         paddingTop="5px"
-        // transform="scale(1.1)"
+        transform="scale(1.1)"
         zIndex="1"
         className="typetools_toolbar_box"
         >

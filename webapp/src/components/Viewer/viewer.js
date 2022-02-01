@@ -54,6 +54,10 @@ const Viewer = ({ viewerId, tile }) => {
     cornerColor: "white",
     cornerSize: 10,
     transparentCorners: false,
+    hasControls:false,
+    lockMovementX:true,
+    lockMovementY:true,
+    evented:true
   });
 
   // Initialize our OpenSeadragon instance
